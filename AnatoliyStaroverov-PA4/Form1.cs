@@ -34,6 +34,22 @@ namespace AnatoliyStaroverov_PA4
         /// <param name="e"> event argument.</param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.Columns.Clear();
+            char alphabet = 'A';
+            for (int x = 0; x < 26; x++, alphabet++)
+            {
+                this.dataGridView1.Columns.Add(alphabet.ToString(), alphabet.ToString());
+            }
+
+            this.dataGridView1.Rows.Clear();
+            for (int i = 1; i <= 50; i++)
+            {
+                this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[i - 1].HeaderCell.Value = i.ToString();
+                this.dataGridView1.AutoResizeRowHeadersWidth(0, DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+            }
+
+            //this.sheet.CellPropertyChanged += this.PropertyChanged;
         }
     }
 }
